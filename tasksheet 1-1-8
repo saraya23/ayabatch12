@@ -1,0 +1,25 @@
+AyaExampleProgram {
+
+    public static void main(String[] args) {
+        int[] parameters = {10, 15, 55};
+        int[] result = cumulativeSum(parameters);
+
+        System.out.println("Given parameters: " + java.util.Arrays.toString(parameters));
+
+        for (int i = 0; i < parameters.length; i++) {
+            System.out.println("Sum for parameter " + (i + 1) + " (" + parameters[i] + ") = " + result[i]);
+        }
+    }
+
+    public static int[] cumulativeSum(int... args) {
+        int total = 0;
+        int[] cumulativeSums = new int[args.length];
+
+        for (int i = 0; i < args.length; i++) {
+            total += args[i];
+            cumulativeSums[i] = total;
+        }
+
+        return cumulativeSums;
+    }
+}
